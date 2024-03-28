@@ -1,0 +1,13 @@
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white font-bold"></div>
+      <ul class="flex">
+        @for ( item of menuItems; track item) {
+            <li class="mr-6">
+                <a class="text-white" routerLink="/{{item.icon}}">{{ item.description }}</a>
+            </li>
+        }
+        <!-- Agrega más elementos de menú según sea necesario -->
+      </ul>
+    </div>
+</nav>

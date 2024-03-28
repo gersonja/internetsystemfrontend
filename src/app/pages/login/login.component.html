@@ -1,0 +1,21 @@
+<section class="h-screen flex justify-center items-center">
+  <div class="w-min bg-white rounded-lg shadow  bg-opacity-50">
+    <div class="p-6 space-y-2 md:space-y-6 sm:p-8">
+      <h1 class="text-xl font-bold text-blue-800">
+        Login
+      </h1>
+      <form class="space-y-4">
+        <div>
+          <label>Email
+            <input type="email" name="email" id="email" required />
+          </label>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+        <button class="pt-2 pb-3 px-5 rounded-lg bg-blue-800 text-white" type="button" (click)="login()">Login</button>
+      </form>
+    </div>
+  </div>
+</section>

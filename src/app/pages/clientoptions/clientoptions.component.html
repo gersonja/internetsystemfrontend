@@ -1,0 +1,26 @@
+<div class="flex flex-col justify-center h-screen items-center">
+  <div class="w-auto p-10 bg-slate-300 rounded-md flex flex-col bg-opacity-50">
+    <h1 class="text-3xl mb-5 text-blue-800 font-extrabold">Atención al Cliente</h1>
+    <h2 class="text-xl mb-5 text-blue-800 font-bold">Sistema de gestion de Atención al Cliente</h2>
+    <ng-container *ngIf="cliente.clientid != 1">
+      <h3>Bienvenido estimado usuario: {{ cliente.name }} {{ cliente.lastname }}</h3>
+      <ng-container *ngFor="let attType of attentionTypeService">
+        <ng-container *ngIf="attType.attentiontypeid !== 'NEW'">
+          <button class="pt-2 pb-3 px-5 mt-3 rounded-lg bg-blue-800 text-white"
+            (click)="postData(attType.attentiontypeid, cliente.clientid)">
+            {{ attType.description }}
+          </button>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="cliente.clientid == 1">
+      <h3>No estás registrado. Por favor, regístrate para acceder a las opciones.</h3>
+      <button class="pt-2 pb-3 px-5 mt-3 rounded-lg bg-blue-800 text-white" (click)="postData('NEW', 1)">
+        Atención al Cliente
+      </button>
+      <!-- Agrega aquí cualquier otra opción que desees mostrar para clientes no registrados -->
+    </ng-container>
+    <button class="pt-2 pb-3 px-5 w-min mt-10 ml-auto rounded-lg bg-blue-800 text-white"
+      routerLink="/client">Aceptar</button>
+  </div>
+</div>
